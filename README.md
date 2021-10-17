@@ -2,6 +2,7 @@
 
 I have developed hamburger menu for Svelte. This menu is very simple and easy to use. Depending on the size of the screen, hamburger menu and global menu are switched. You can customize it using props.
 
+RIPL: [Example of how to use hamburger-menu-svelte](https://svelte.dev/repl/f4bbc54bdb1b470c8aaafae6145a5537?version=3.43.2)
 ![](https://media.giphy.com/media/couYpkokoLxGGezgYW/giphy.gif)
 
 # 1. How to use?
