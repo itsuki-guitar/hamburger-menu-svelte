@@ -1,0 +1,31 @@
+{
+  "name": "hamburger-menu-svelte",
+  "version": "1.0.0",
+  "description": "This is a hamburger menu module for Svelte. The menu is intuitive and easy to use. You can use default style and change style.",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "svelte": "src/index.js",
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "svelte",
+    "hamburger",
+    "burger",
+    "menu"
+  ],
+  "author": {
+    "name": "Kazuki Fujita",
+    "Nickname":"Itsuki",
+    "GitHub account":"itsuki-guitar"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "rollup": "^2.58.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-svelte": "^7.1.0",
+    "svelte": "^3.43.2"
+  }
+}
