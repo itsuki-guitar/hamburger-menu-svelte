@@ -7,11 +7,15 @@
     export let smNaviColor;
     export let backgroundColor;
     export let naviFadeTime;
-  
+    export let navizIndexSize;
+
     naviFadeTime = naviFadeTime + "s";
   </script>
   
-  <div style="--pcNaviColor:{pcNaviColor}; --smNaviColor:{smNaviColor}; --backgroundColor:{backgroundColor}; --naviFadeTime:{naviFadeTime}">
+  <div style="--pcNaviColor:{pcNaviColor}; --smNaviColor:{smNaviColor};
+              --backgroundColor:{backgroundColor}; --naviFadeTime:{naviFadeTime};
+              --navizIndexSize:{navizIndexSize}">
+
     <nav class:open>
       <ul>
         {#each menu_list as { name, url }}
@@ -33,14 +37,14 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        /* 初期：非表示 */
         visibility: hidden;
         opacity: 0;
-        /* ふわっと表示 */
         transition: var(--naviFadeTime) ease-in-out;
+        z-index: var(--backgroundColor);
       }
       nav ul {
         list-style: none;
+        text-align: center;
       }
       nav li:not(:last-child) {
         margin-bottom: 30px;
@@ -55,9 +59,7 @@
       }
     }
     @media (min-width: 768px) {
-      /* メニューを右に寄せる */
       nav {
-        /* 右寄せ */
         margin-left: auto;
       }
       nav ul {

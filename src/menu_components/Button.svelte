@@ -8,14 +8,22 @@
     export let closeButtonColor;
     export let buttonTransitionTime;
     let textFadeTime=Number(buttonTransitionTime);
+    export let zIndexSize;
+    export let buttonTopSize;
+    export let buttonSideSize;
+    let textTopSize = Number(buttonTopSize)-5;
   
     buttonTransitionTime = buttonTransitionTime + "s";
-  
+    buttonTopSize = buttonTopSize + "px";
+    buttonSideSize = buttonSideSize + "px";
+    textTopSize = textTopSize + "px";
   
   </script>
   
   
-  <div style="--openButtonColor:{openButtonColor}; --closeButtonColor:{closeButtonColor};--buttonTransitionTime:{buttonTransitionTime}">
+  <div style="--openButtonColor:{openButtonColor}; --closeButtonColor:{closeButtonColor};
+              --buttonTransitionTime:{buttonTransitionTime}; --zIndexSize:{zIndexSize};
+              --buttonTopSize:{buttonTopSize}; --textTopSize:{textTopSize}; --buttonSideSize:{buttonSideSize}">
       <button type="button" class="nav-button" class:open class:left/>
       {#if open==false}
       <p class="nav-text" transition:fade="{{duration: textFadeTime*1000}}" style class:left>menu</p>
@@ -26,21 +34,21 @@
   <style>
   
   .left{
-    left:10px;
+    left:var(--buttonSideSize);
   }
   
   .nav-button{
     position: fixed;
     /* Specify the location */
-    top: 15px;
-    right:10px;
+    top: var(--buttonTopSize);
+    right:var(--buttonSideSize);
     display: block;
     padding: 0;
     outline: none;
     border: none;
     width: 36px;
     height: 0px;
-    cursor: pointer;
+    cursor: var(--zIndexSize);
   }
   
   .nav-button::before,
@@ -62,7 +70,7 @@
   .open{
     box-shadow: none;
     transform: translateY(10px);
-    z-index: 100;
+    z-index: var(--zIndexSize);
   }
   .open::before{
     content: "";
@@ -81,14 +89,15 @@
   
   .nav-text{
     position: fixed;
-    top: 10px;
-    right:10px;
+    top: var(--textTopSize);
+    right:var(--buttonSideSize);
     display: block;
     padding: 0;
     cursor: pointer;
     font-size: 14px;
     color:var(--openButtonColor);
     transition: var(--naviTransitionTime) ease-in-out;
+    z-index: var(--zIndexSize);
   }
   
   @media(min-width: 768px){
