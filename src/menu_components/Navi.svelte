@@ -40,7 +40,7 @@
         visibility: hidden;
         opacity: 0;
         transition: var(--naviFadeTime) ease-in-out;
-        z-index: var(--backgroundColor);
+        z-index: var(--navizIndexSize);
       }
       nav ul {
         list-style: none;
